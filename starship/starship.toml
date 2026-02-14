@@ -159,7 +159,8 @@ show_notifications = false
 # ── Jobs ──
 [jobs]
 symbol = "✦ "
-threshold = 1
+symbol_threshold = 1
+number_threshold = 2
 style = "bold blue"
 
 # ── Cloud (disabled by default, enable as needed) ──

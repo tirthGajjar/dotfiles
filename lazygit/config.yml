@@ -1,6 +1,5 @@
 gui:
   nerdFontsVersion: "3"
-  showIcons: true
   showRandomTip: false
   showCommandLog: false
   border: rounded
