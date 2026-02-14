@@ -92,7 +92,7 @@ install_zsh_plugins() {
       success "Plugin $name already installed"
     else
       info "Installing zsh plugin: $name"
-      git clone "$url" "$dest"
+      git clone --depth 1 "$url.git" "$dest"
       success "Plugin $name installed"
     fi
   done
