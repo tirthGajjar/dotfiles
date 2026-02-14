@@ -137,6 +137,9 @@ symlink_configs() {
   # Atuin
   create_symlink "$DOTFILES_DIR/atuin/config.toml" "$HOME/.config/atuin/config.toml"
 
+  # Lazygit
+  create_symlink "$DOTFILES_DIR/lazygit/config.yml" "$HOME/.config/lazygit/config.yml"
+
   success "All configs symlinked"
 }
 

@@ -11,6 +11,7 @@ My macOS development environment. Catppuccin Mocha theme everywhere, modern CLI 
 | Prompt | [Starship](https://starship.rs) | `starship/starship.toml` |
 | Git | Git + [Delta](https://github.com/dandavison/delta) | `git/.gitconfig` |
 | History | [Atuin](https://atuin.sh) | `atuin/config.toml` |
+| Git TUI | [Lazygit](https://github.com/jesseduffield/lazygit) | `lazygit/config.yml` |
 | Runtimes | [mise](https://mise.jdx.dev) | `mise/config.toml` |
 | Font | JetBrains Mono (Nerd Font) | via Homebrew |
 | Packages | Homebrew | `Brewfile` |
@@ -67,6 +68,8 @@ dotfiles/
 ├── git/
 │   ├── .gitconfig        # -> ~/.gitconfig
 │   └── .gitignore_global # -> ~/.gitignore_global
+├── lazygit/
+│   └── config.yml        # -> ~/.config/lazygit/config.yml
 ├── mise/
 │   └── config.toml       # -> ~/.config/mise/config.toml
 ├── starship/
