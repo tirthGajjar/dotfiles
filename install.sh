@@ -104,7 +104,7 @@ install_claude() {
     success "Claude Code already installed"
   else
     info "Installing Claude Code..."
-    npm install -g @anthropic-ai/claude-code
+    curl -fsSL https://claude.ai/install.sh | bash
     success "Claude Code installed"
   fi
 }
@@ -115,7 +115,7 @@ install_opencode() {
     success "OpenCode already installed"
   else
     info "Installing OpenCode..."
-    brew install opencode
+    curl -fsSL https://opencode.ai/install | bash
     success "OpenCode installed"
   fi
 }
