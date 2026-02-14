@@ -1,0 +1,57 @@
+# ══════════════════════════════════════════════════════
+# Atuin Configuration
+# ══════════════════════════════════════════════════════
+
+# Fuzzy search by default
+search_mode = "fuzzy"
+
+# Start with workspace-scoped history (most useful), fall through to global
+filter_mode = "global"
+workspaces = true
+
+# Compact UI to save space
+style = "compact"
+inline_height = 30
+show_preview = true
+max_preview_height = 4
+
+# Press Enter to run, Tab to edit
+enter_accept = true
+
+# Auto-detect vim/emacs mode from shell
+keymap_mode = "auto"
+
+# Don't log secrets
+secrets_filter = true
+
+# Filter noise from history
+history_filter = [
+  "^ls$",
+  "^cd ",
+  "^pwd$",
+  "^exit$",
+  "^clear$",
+]
+
+[stats]
+common_subcommands = [
+  "cargo",
+  "docker",
+  "git",
+  "go",
+  "kubectl",
+  "npm",
+  "pnpm",
+  "yarn",
+  "brew",
+  "mise",
+]
+
+[sync]
+records = true
+
+[search]
+filters = ["workspace", "directory", "global", "host", "session"]
+
+[ui]
+columns = ["duration", "time", "command"]

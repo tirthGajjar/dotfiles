@@ -1,0 +1,222 @@
+# ══════════════════════════════════════════════════════
+# Starship Prompt
+# ══════════════════════════════════════════════════════
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$git_metrics\
+$nodejs\
+$python\
+$rust\
+$golang\
+$ruby\
+$java\
+$lua\
+$swift\
+$kotlin\
+$php\
+$docker_context\
+$package\
+$cmd_duration\
+$line_break\
+$character"""
+
+# Timeout for commands that starship runs (ms)
+command_timeout = 1000
+
+# Blank line between prompts
+add_newline = true
+
+# ── Prompt Character ──
+[character]
+success_symbol = "[❯](mauve)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+# ── Directory ──
+[directory]
+truncation_length = 4
+truncation_symbol = "…/"
+style = "bold lavender"
+read_only = " 󰌾"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Developer" = " "
+"Projects" = " "
+
+# ── Git Branch ──
+[git_branch]
+symbol = " "
+style = "bold mauve"
+format = "[$symbol$branch(:$remote_branch)]($style) "
+
+# ── Git Status ──
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold maroon"
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇢${count}"
+diverged = "⇕⇡${ahead_count}⇢${behind_count}"
+untracked = "?${count}"
+stashed = "*"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»"
+deleted = "✘"
+
+# ── Git State (rebase, merge, etc.) ──
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bold yellow"
+
+# ── Git Metrics (lines added/removed) ──
+[git_metrics]
+disabled = false
+added_style = "green"
+deleted_style = "red"
+format = '([+$added]($added_style) )([-$deleted]($deleted_style) )'
+
+# ── Languages (all auto-detected) ──
+
+[nodejs]
+symbol = " "
+style = "bold green"
+format = "[$symbol($version)]($style) "
+detect_files = ["package.json", ".node-version", ".nvmrc"]
+detect_folders = ["node_modules"]
+
+[python]
+symbol = " "
+style = "bold yellow"
+format = '[${symbol}(${version})(\($virtualenv\))]($style) '
+
+[rust]
+symbol = " "
+style = "bold peach"
+format = "[$symbol($version)]($style) "
+
+[golang]
+symbol = " "
+style = "bold teal"
+format = "[$symbol($version)]($style) "
+
+[ruby]
+symbol = " "
+style = "bold red"
+format = "[$symbol($version)]($style) "
+
+[java]
+symbol = " "
+style = "bold maroon"
+format = "[$symbol($version)]($style) "
+
+[lua]
+symbol = " "
+style = "bold blue"
+format = "[$symbol($version)]($style) "
+
+[swift]
+symbol = " "
+style = "bold peach"
+format = "[$symbol($version)]($style) "
+
+[kotlin]
+symbol = " "
+style = "bold mauve"
+format = "[$symbol($version)]($style) "
+
+[php]
+symbol = " "
+style = "bold lavender"
+format = "[$symbol($version)]($style) "
+
+# ── Docker ──
+[docker_context]
+symbol = " "
+style = "bold blue"
+format = "[$symbol$context]($style) "
+only_with_files = true
+
+# ── Package Version ──
+[package]
+symbol = "📦 "
+style = "bold peach"
+format = "[$symbol$version]($style) "
+
+# ── Command Duration ──
+[cmd_duration]
+min_time = 2_000
+format = "[$duration]($style) "
+style = "bold yellow"
+show_notifications = false
+
+# ── Jobs ──
+[jobs]
+symbol = "✦ "
+threshold = 1
+style = "bold blue"
+
+# ── Cloud (disabled by default, enable as needed) ──
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[azure]
+disabled = true
+
+# ── Disabled (keep prompt clean) ──
+
+[battery]
+disabled = true
+
+[time]
+disabled = true
+
+[username]
+disabled = true
+
+[hostname]
+disabled = true
+
+[memory_usage]
+disabled = true
+
+# ── Palette (Catppuccin Mocha) ──
+palette = "catppuccin_mocha"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

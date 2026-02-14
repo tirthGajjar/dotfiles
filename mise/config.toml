@@ -1,0 +1,5 @@
+[tools]
+fzf = "latest"
+node = "24"
+pnpm = "10.0.0"
+uv = "0.9.26"

@@ -1,0 +1,70 @@
+[user]
+	name = Tirth Gajjar
+	email = contact@tirth.dev
+
+[core]
+	editor = cursor -w
+	pager = delta
+	excludesfile = ~/.gitignore_global
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
+	default = current
+
+[fetch]
+	prune = true
+
+[merge]
+	conflictstyle = zdiff3
+
+[rebase]
+	autoStash = true
+	autoSquash = true
+
+[diff]
+	algorithm = histogram
+	colorMoved = default
+
+[rerere]
+	enabled = true
+
+# ── Delta (beautiful diffs) ──
+[delta]
+	navigate = true
+	side-by-side = true
+	line-numbers = true
+	hyperlinks = true
+	dark = true
+	syntax-theme = Catppuccin Mocha
+
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
+	hunk-header-decoration-style = cyan box ul
+
+[interactive]
+	diffFilter = delta --color-only
+
+# ── Aliases ──
+[alias]
+	s = status -sb
+	co = checkout
+	cb = checkout -b
+	cm = commit -m
+	ca = commit --amend
+	can = commit --amend --no-edit
+	unstage = reset HEAD --
+	undo = reset --soft HEAD~1
+	last = log -1 HEAD --stat
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	branches = branch -a --sort=-committerdate --format='%(color:yellow)%(refname:short)%(color:reset) %(color:green)(%(committerdate:relative))%(color:reset) %(contents:subject)'
+	stash-all = stash save --include-untracked
+	wip = !git add -A && git commit -m 'wip'
+	nuke = !git clean -fd && git checkout -- .

@@ -1,0 +1,92 @@
+# ══════════════════════════════════════════════════════
+# Ghostty Configuration
+# ══════════════════════════════════════════════════════
+
+# ── Theme ──
+# Auto-switches between dark/light based on macOS appearance
+theme = light:Catppuccin Latte,dark:Catppuccin Mocha
+
+# ── Font ──
+font-family = "JetBrains Mono"
+font-size = 14
+font-thicken = true
+font-feature = +liga
+font-feature = +calt
+adjust-cell-height = 2
+
+# ── Window ──
+background-opacity = 0.85
+background-blur = true
+window-padding-x = 16
+window-padding-y = 12,8
+window-padding-balance = true
+window-padding-color = extend
+window-height = 35
+window-width = 120
+
+# ── Cursor ──
+cursor-style = block
+cursor-style-blink = false
+
+# ── Mouse ──
+mouse-hide-while-typing = true
+focus-follows-mouse = false
+
+# ── Split Panes ──
+unfocused-split-opacity = 0.7
+
+# ── Clipboard ──
+clipboard-trim-trailing-spaces = true
+clipboard-paste-protection = true
+
+# ── Shell Integration ──
+shell-integration = detect
+shell-integration-features = cursor,sudo,title
+
+# ── Misc ──
+confirm-close-surface = true
+minimum-contrast = 1.1
+scrollback-limit = 10000000
+
+# ── macOS ──
+macos-titlebar-style = tabs
+window-theme = auto
+macos-icon = custom-style
+macos-icon-ghost-color = #cba6f7
+macos-icon-screen-color = #181825,#313244
+macos-option-as-alt = right
+macos-window-shadow = true
+window-save-state = default
+window-inherit-working-directory = true
+window-inherit-font-size = true
+window-step-resize = true
+window-colorspace = display-p3
+quit-after-last-window-closed = false
+
+# ── Quick Terminal (drop-down terminal with global hotkey) ──
+quick-terminal-position = top
+quick-terminal-animation-duration = 0.08
+quick-terminal-autohide = true
+
+# ── Keybindings: Split Navigation (vim-style with Option) ──
+keybind = alt+h=goto_split:left
+keybind = alt+l=goto_split:right
+keybind = alt+k=goto_split:up
+keybind = alt+j=goto_split:down
+
+# ── Keybindings: Split Creation ──
+keybind = alt+shift+h=new_split:left
+keybind = alt+shift+l=new_split:right
+keybind = alt+shift+k=new_split:up
+keybind = alt+shift+j=new_split:down
+
+# ── Keybindings: Prompt Navigation (jump between commands) ──
+keybind = cmd+up=jump_to_prompt:-1
+keybind = cmd+down=jump_to_prompt:1
+
+# ── Keybindings: Tabs ──
+keybind = cmd+t=new_tab
+
+# ── Keybindings: Utility ──
+keybind = cmd+shift+i=inspector:toggle
+keybind = cmd+shift+r=reload_config
