@@ -77,10 +77,9 @@ install_zsh_plugins() {
   local ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 
   local plugins=(
-    "zsh-autosuggestions|https://github.com/zsh-users/zsh-autosuggestions"
-    "zsh-syntax-highlighting|https://github.com/zsh-users/zsh-syntax-highlighting"
-    "alias-tips|https://github.com/djui/alias-tips"
-    "zsh-pnpm-completions|https://github.com/mat2ja/zsh-pnpm-completions"
+    "zsh-autosuggestions|git@github.com:zsh-users/zsh-autosuggestions.git"
+    "zsh-syntax-highlighting|git@github.com:zsh-users/zsh-syntax-highlighting.git"
+    "alias-tips|git@github.com:djui/alias-tips.git"
   )
 
   for entry in "${plugins[@]}"; do
@@ -92,7 +91,7 @@ install_zsh_plugins() {
       success "Plugin $name already installed"
     else
       info "Installing zsh plugin: $name"
-      git clone --depth 1 "$url.git" "$dest"
+      git clone --depth 1 "$url" "$dest"
       success "Plugin $name installed"
     fi
   done

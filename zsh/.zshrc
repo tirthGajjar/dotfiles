@@ -18,7 +18,6 @@ plugins=(
   fzf                     # Fuzzy finder integration
   npm                     # npm/node completions & aliases
   alias-tips              # Shows tips when you type a long command that has an alias
-  zsh-pnpm-completions    # pnpm completions
 )
 
 source $ZSH/oh-my-zsh.sh
