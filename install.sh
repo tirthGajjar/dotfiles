@@ -11,8 +11,10 @@ set -euo pipefail
 #   2. Installs packages via Brewfile
 #   3. Installs mise (runtime version manager)
 #   4. Installs Oh My Zsh + plugins
-#   5. Symlinks all config files
-#   6. Installs mise-managed runtimes
+#   5. Installs Claude Code (AI coding assistant)
+#   6. Installs OpenCode
+#   7. Symlinks all config files
+#   8. Installs mise-managed runtimes
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -96,6 +98,28 @@ install_zsh_plugins() {
   done
 }
 
+# ── Claude Code ──
+install_claude() {
+  if command -v claude &>/dev/null; then
+    success "Claude Code already installed"
+  else
+    info "Installing Claude Code..."
+    npm install -g @anthropic-ai/claude-code
+    success "Claude Code installed"
+  fi
+}
+
+# ── OpenCode ──
+install_opencode() {
+  if command -v opencode &>/dev/null; then
+    success "OpenCode already installed"
+  else
+    info "Installing OpenCode..."
+    brew install opencode
+    success "OpenCode installed"
+  fi
+}
+
 # ── Symlinks ──
 create_symlink() {
   local src="$1"
@@ -163,6 +187,8 @@ main() {
   install_mise
   install_oh_my_zsh
   install_zsh_plugins
+  install_claude
+  install_opencode
   symlink_configs
   install_runtimes
 
