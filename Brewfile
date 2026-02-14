@@ -3,9 +3,6 @@
 # ══════════════════════════════════════════════════════
 # Install: brew bundle --file=Brewfile
 
-# ── Taps ──
-tap "homebrew/bundle"
-
 # ── Core CLI Tools ──
 brew "git"
 brew "gh"
